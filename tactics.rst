@@ -106,7 +106,7 @@ Basic Tactics
 
 ``apply expr``
 
-    The ``apply`` tactic tries to match the current goal against the conclusion of the type of term. The argument term should be a term well-formed in the local context of the main goal. If it succeeds, then the tactic returns as many subgoals as the number of premises that have not been fixed by type inference or type class resolution. Non-dependent premises are added before dependent ones.
+    The ``apply`` tactic tries to match the current goal against the conclusion of the type of expr. The argument expr should be a term well-formed in the local context of the main goal. If it succeeds, then the tactic returns as many subgoals as the number of premises that have not been fixed by type inference or type class resolution. Non-dependent premises are added before dependent ones.
 
     The ``apply`` tactic uses higher-order pattern matching, type class resolution, and first-order unification with dependent types.
 
@@ -190,7 +190,7 @@ Basic Tactics
 
     ``by_cases p with h`` splits the main goal into two cases, assuming ``h : p`` in the first branch, and ``h : ¬ p`` in the second branch.
 
-    This tactic requires that ``p`` is decidable. To ensure that all propositions are decidable via classical reasoning, use  ``local attribute classical.prop_decidable [instance]``.
+    This tactic requires that ``p`` is decidable. To ensure that all propositions are decidable via classical reasoning, use  ``local attribute [instance] classical.prop_decidable``.
 
 ``by_contradiction id?``
 
